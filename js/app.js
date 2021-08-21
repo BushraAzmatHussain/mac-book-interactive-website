@@ -1,3 +1,6 @@
+
+//memory buttons handle function
+
 function memory(memorySixteen){
     const memoryCost = document.getElementById('extraMemoryPrice');
     if(memorySixteen == true){
@@ -10,7 +13,7 @@ function memory(memorySixteen){
 }
 
 
-
+//storage buttons handle function
 function storage(SSD){
     const storageCost = document.getElementById('extraStorageCost');
     if(SSD == true){
@@ -24,6 +27,7 @@ function storage(SSD){
     }
 }
 
+//delivery charge handle function
 function delivery(deliveryCharge){
     const deliveryCost = document.getElementById('delivery-cost');
     if(deliveryCharge == true){
@@ -34,7 +38,7 @@ function delivery(deliveryCharge){
     }
 }
 
-
+//total price handle
 function total(){
     const bestPrice = document.getElementById('best-price').innerText;
     const memory = document.getElementById('extraMemoryPrice').innerText;
@@ -50,50 +54,64 @@ function total(){
 }
 
 
-  //update total
+//update total price
 
-  document.getElementById('apply').addEventListener("click", function () {
-      const promoCodeField = document.getElementById('input');
-      const finalPrice = document.getElementById('final-price');
-      const totalCost = document.getElementById('total-price').innerText;
-      const totalPrice = parseInt(totalCost);
-      if(promoCodeField.value == 'stevekaku'){
-          finalPrice.innerText = (totalPrice - (totalPrice*0.2));
-        }
-        
-        else{
-            alert('Please enter valid promo code to get 20% discount ');
-            finalPrice.innerText = totalPrice;
-        }
-        promoCodeField.value ='';
-    });
+document.getElementById('apply').addEventListener("click", function () {
+    const promoCodeField = document.getElementById('input');
+    const finalPrice = document.getElementById('final-price');
+    const totalCost = document.getElementById('total-price').innerText;
+    const totalPrice = parseInt(totalCost);
+    if(promoCodeField.value == 'stevekaku'){
+        finalPrice.innerText = (totalPrice - (totalPrice*0.2));
+    }
+    
+    else{
+        alert('Please enter valid promo code to get 20% discount ');
+        finalPrice.innerText = totalPrice;
+    }
+    
+    promoCodeField.value ='';
+
+});
+
 
 document.getElementById('sixteenGBMemory').addEventListener('click',function(){
    memory(true);
    total();
 });
+
+
 document.getElementById('eightGBMemory').addEventListener('click',function(){
 
     memory(false);
     total();
 });
+
+
 document.getElementById('twoFiftySix').addEventListener('click',function(){
     storage();
     total();
 });
+
+
 document.getElementById('fiveTwelve').addEventListener('click',function(){
     storage(false);
     total();
 });
+
+
 document.getElementById('oneTeraBite').addEventListener('click',function(){
     storage(true);
     total();
 });
+
+
 document.getElementById('delivery-zero').addEventListener('click',function(){
     delivery(false);
     total();
-
 });
+
+
 document.getElementById('delivery-twenty').addEventListener('click',function(){
     delivery(true);
     total();
