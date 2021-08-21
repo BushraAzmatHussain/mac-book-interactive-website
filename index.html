@@ -61,7 +61,7 @@
             <div class="fw-bold w-50">
                 <div class="d-flex justify-content-between">
                     <p>Best Price</p>
-                    <p>$1299</p>
+                    <p>$<span id="best-price">1299</span></p>
                 </div>
                 <p class="border-bottom"> </p>
                 <div class="d-flex justify-content-between">
@@ -82,7 +82,7 @@
                 <p class="border-bottom border border-dark "> </p>
                 <div class="d-flex justify-content-between">
                     <p>Total Price</p>
-                    <p>$1299</p>
+                    <p>$<span id="total-price">1299</span></p>
                 </div>
                 <p class="border-bottom"> </p>
 
@@ -94,10 +94,10 @@
 
             <div class="w-50 d-flex justify-content-center">
                 <div>
-                    <input class="rounded border border-2" type="text">
+                    <input id="input" class="rounded border border-2" type="text">
                 </div>
                 <div>
-                    <button class="rounded apply-btn-color text-white  border border-2">Apply</button>
+                    <button id="apply" class="rounded apply-btn-color text-white  border border-2">Apply</button>
 
                 </div>
             </div>
@@ -106,7 +106,7 @@
     </section>
     <section class="container">
         <p class="border-bottom"> </p>
-        <h1 class="text-center">Total: $1299</h1>
+        <h1 class="text-center">Total: $<span id="final-price">1299</span></h1>
     </section>
     <!-- js -->
     <script src="js/app.js"></script>
